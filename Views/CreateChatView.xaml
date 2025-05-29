@@ -1,0 +1,23 @@
+<UserControl x:Class="arasakagram.Views.CreateChatView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Width="450" Height="280">
+    <Viewbox>
+        <StackPanel Width="263" Margin="10">
+            <TextBlock Text="Создать чат" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
+            <TextBlock Text="Название чата"/>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10" Style="{StaticResource RoundedTextBoxStyle}"/>
+            <TextBlock Text="Тема чата"/>
+            <TextBox Text="{Binding ChatTopic, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10" Style="{StaticResource RoundedTextBoxStyle}"/>
+            <TextBlock Text="Тип чата"/>
+            <ComboBox SelectedValue="{Binding ChatType, Mode=TwoWay}" Margin="0,0,0,10" Style="{StaticResource RoundedComboBoxStyle}">
+                <ComboBoxItem Content="Групповой" Tag="1"/>
+                <ComboBoxItem Content="Личный" Tag="2"/>
+            </ComboBox>
+            <Button Content="Создать" Command="{Binding CreateChatCommand}" Style="{StaticResource RoundButton}"
+                Height="25" Width="100" Background="#82CC7E" Foreground="White" FontWeight="SemiBold"/>
+        </StackPanel>
+    </Viewbox>
+</UserControl> 

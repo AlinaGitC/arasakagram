@@ -1,0 +1,37 @@
+<Window x:Class="arasakagram.Views.ProfileView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Профиль пользователя" Height="800" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Viewbox>
+        <Grid Background="#F7F7F7" Margin="0,0,0,0">
+        <Border Background="White" CornerRadius="16" Padding="24" Margin="16">
+            <StackPanel>
+                <TextBlock Text="Профиль пользователя" FontSize="22" FontWeight="Bold" Margin="0,0,0,18"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,18">
+                    <Image Source="{Binding CurrentUser.AvatarImage}" Width="72" Height="72" Margin="0,0,18,0" ClipToBounds="True" Stretch="UniformToFill"/>
+                    <Button Content="Изменить фото" Command="{Binding ChangeAvatarCommand}" Margin="0,24,0,0" Padding="8,2"
+                            Height="36" Style="{StaticResource RoundButton}"
+                            Width="150" Background="#82CC7E" Foreground="White" FontWeight="SemiBold"/>
+                </StackPanel>
+                <TextBlock Text="Имя" FontWeight="SemiBold"/>
+                <TextBox Text="{Binding CurrentUser.FirstName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,8" 
+                         Style="{StaticResource RoundedTextBoxStyle}" Height="28" BorderBrush="#869293"/>
+                <TextBlock Text="Фамилия" FontWeight="SemiBold"/>
+                <TextBox Text="{Binding CurrentUser.LastName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,8"
+                         Style="{StaticResource RoundedTextBoxStyle}" Height="28" BorderBrush="#869293"/>
+                <TextBlock Text="Отчество" FontWeight="SemiBold"/>
+                <TextBox Text="{Binding CurrentUser.MiddleName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,8"
+                         Style="{StaticResource RoundedTextBoxStyle}" Height="28" BorderBrush="#869293"/>
+                <TextBlock Text="Телефон" FontWeight="SemiBold"/>
+                <TextBox Text="{Binding CurrentUser.Phone, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,8"
+                         Style="{StaticResource RoundedTextBoxStyle}" Height="28" BorderBrush="#869293"/>
+                <Button Content="Сохранить профиль" Command="{Binding SaveProfileCommand}" Margin="0,6,0,0" Height="36" Style="{StaticResource RoundButton}"
+                            Width="150" Background="#82CC7E" Foreground="White" FontWeight="SemiBold"/>
+                <Button Content="⏻ Выйти" Command="{Binding LogoutCommand}" Margin="0,12,0,0" Height="36" Background="#FFEBEB" 
+                        Width="150" Style="{StaticResource RoundButton}" Foreground="#BE5C38" FontWeight="SemiBold"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+    </Viewbox>
+    
+</Window> 

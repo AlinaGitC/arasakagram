@@ -1,0 +1,16 @@
+<UserControl x:Class="arasakagram.Views.CreateGroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Width="450" Height="220">
+    <Viewbox>
+        <StackPanel Width="263" Margin="10">
+            <TextBlock Text="Создать группу" FontWeight="Bold" FontSize="18"/>
+            <TextBlock Text="Название группы" Margin="0,10,0,5"/>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10" Style="{StaticResource RoundedTextBoxStyle}" Height="30"/>
+            <Button Content="Создать" Command="{Binding CreateGroupCommand}" Style="{StaticResource RoundButton}"
+                Height="25" Width="100" Background="#82CC7E" Foreground="White" FontWeight="SemiBold"/>
+        </StackPanel>
+    </Viewbox>
+</UserControl> 
